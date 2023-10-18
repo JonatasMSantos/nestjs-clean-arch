@@ -8,8 +8,11 @@ import { Project } from './projects/entities/project.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: ':memory:',
+      type: 'mysql',
+      host: 'db',
+      database: 'nest',
+      username: 'root',
+      password: 'root',
       entities: [Project],
       synchronize: true,
     }),

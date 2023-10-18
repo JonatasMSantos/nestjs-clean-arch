@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, Generated, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
 import crypto from 'crypto';
 
 export enum ProjectStatus {
@@ -9,8 +9,8 @@ export enum ProjectStatus {
 }
 
 @Entity()
-export class Project {
-  @PrimaryColumn()
+export class Project {  
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()
